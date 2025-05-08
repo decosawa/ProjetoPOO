@@ -1,9 +1,5 @@
-package com.mycompany.projetopoo;
+package com.projeto.projeto;
 
-/**
- *
- * @author andre
- */
 public class Principal {
 
     public static void main(String[] args) {
