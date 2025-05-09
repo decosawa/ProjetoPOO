@@ -1,4 +1,4 @@
-public abstract class Clothes {
+public abstract class Cloth {
 
     private String color;
     private String brand;
@@ -12,7 +12,7 @@ public abstract class Clothes {
 
     
     // Constructors
-    public Clothes() {
+    public Cloth() {
         this.color = "";
         this.brand = "";
         this.audience = "";

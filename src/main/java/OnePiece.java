@@ -1,4 +1,4 @@
-public class OnePiece extends Clothes {
+public class OnePiece extends Cloth {
 
     // Attributes
     private int waistSize;

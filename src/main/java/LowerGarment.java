@@ -1,4 +1,4 @@
-public class LowerGarment extends Clothes {
+public class LowerGarment extends Cloth {
 
     //Attributes
     private int waistSize;

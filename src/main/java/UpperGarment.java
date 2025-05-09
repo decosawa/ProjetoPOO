@@ -1,4 +1,4 @@
-public class UpperGarment extends Clothes {
+public class UpperGarment extends Cloth {
 
     //Attributes
     private int bustSize;
