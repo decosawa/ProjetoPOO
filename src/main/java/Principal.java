@@ -7,62 +7,49 @@ public class Principal {
         UpperGarment upperGarment = new UpperGarment();
 
         String value = "";
-        boolean isValid = false;
 
         System.out.println("Entre tamanho de camiseta: ");
         value = reader.dataEntry(value);
-        upperGarment.setSize(value.toUpperCase());
-        isValid = verifyRealSizeUpperGarment(upperGarment.getSize());
-        do {
-            if (isValid) {
-                System.out.println("Tamanho válido: " + upperGarment.getSize());
-            } else {
-                System.out.println("Tamanho inválido. Tente novamente.");
-                value = reader.dataEntry(value);
-                upperGarment.setSize(value);
-                isValid = verifyRealSizeUpperGarment(upperGarment.getSize());
-            }
-        } while (!isValid);
+        boolean isValid = verifyUpperGarmentSize(value);
+        while (!isValid) {
+            System.out.println("Tamanho inválido. Tente novamente.");
+            value = reader.dataEntry(value);
+            isValid = verifyUpperGarmentSize(value);
+        }
+        upperGarment.setSize(value);
 
         System.out.println("Entre tamanho de calça: ");
         value = reader.dataEntry(value);
-        lowerGarment.setSize(parser.tryParseInt(value));
-        isValid = verifyRealSizeLowerGarment(lowerGarment.getSize());
-        do {
-            if (isValid) {
-                System.out.println("Tamanho válido: " + lowerGarment.getSize());
-            } else {
-                System.out.println("Tamanho inválido. Tente novamente.");
-                value = reader.dataEntry(value);
-                lowerGarment.setSize(parser.tryParseInt(value));
-                isValid = verifyRealSizeLowerGarment(lowerGarment.getSize());
-            }
-        } while (!isValid);
-
+        int parsedIntegerValue = parser.tryParseInt(value);
+        isValid = verifyLowerGarmentSize(parsedIntegerValue);
         
-        System.out.println("==========================");
-        System.out.println("Tamanho de calça: " + lowerGarment.getSize());
-        System.out.println("Tamanho de camiseta: " + upperGarment.getSize());
-    }
-
-    public static Boolean verifyRealSizeUpperGarment(String size){
-        boolean isValid=false;
-        return !isValid ? size.equals("PP") || size.equals("P") || size.equals("M") || size.equals("G") || size.equals("GG") : false;
-    }
-
-    public static Boolean verifyRealSizeLowerGarment(int size){
-        boolean isValid=false;
-        if(size >= 30 && size <= 54){
-            if(size % 2 == 0){
-                isValid = true;
-            }else{
-                isValid = false;
-            }
-        }else{
-            isValid = false;
+        while (!isValid) {
+            System.out.println("Tamanho inválido. Tente novamente.");
+            value = reader.dataEntry(value);
+            parsedIntegerValue = parser.tryParseInt(value);
+            isValid = verifyLowerGarmentSize(parsedIntegerValue);
         }
+        lowerGarment.setSize(parser.parseIntToString(parsedIntegerValue));
 
-        return isValid;
+        System.out.println("Tamanho da camiseta: " + upperGarment.getSize());
+        System.out.println("Tamanho da calça: " + lowerGarment.getSize());
     }
+
+    public static boolean verifyUpperGarmentSize(String value) {
+        boolean isValid = false;
+        return !isValid ? value.equalsIgnoreCase("PP") || value.equalsIgnoreCase("P") || value.equalsIgnoreCase("M") || value.equalsIgnoreCase("G") || value.equalsIgnoreCase("GG"): isValid;
+    }
+
+    public static boolean verifyLowerGarmentSize(int value) {
+        boolean isValid = false;
+        if(value >= 30 && value <= 54) {
+            if(value % 2 == 0) {
+                return isValid = true;
+            }
+        }
+        return isValid;
+        
+    }
+        
        
 }

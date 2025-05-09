@@ -1,23 +1,40 @@
 public class LowerGarment extends Clothes {
 
-    private int size;
-
+    //Attributes
+    private int waistSize;
+    private int hipSize;
+    private boolean hasPockets;
+    
     //Constructors
-
     public LowerGarment() {
         super();
-        this.size = 0;
     }
 
     //Getters and Setters
-
-    public int getSize() {
-        return size;
+    public int getWaistSize() {
+        return waistSize;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    private int getHipSize() {
+        return hipSize;
     }
+
+    private boolean getHasPockets() {
+        return hasPockets;
+    }
+
+    public void setHasPockets(boolean hasPockets) {
+        this.hasPockets = hasPockets;
+    }
+
+    public void setHipSize(int hipSize) {
+        this.hipSize = hipSize;
+    }
+
+    public void setWaistSize(int waistSize) {
+        this.waistSize = waistSize;
+    }
+
     
     
 }

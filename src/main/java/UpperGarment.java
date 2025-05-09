@@ -1,19 +1,49 @@
 public class UpperGarment extends Clothes {
 
-    private String size;
+    //Attributes
+    private int bustSize;
+    private String sleeveLenght;
+    private String collarType;
+    private boolean hasButton;
 
     //Constructors
     public UpperGarment() {
         super();
-        this.size = "";
     }
 
     //Getters and Setters
-    public String getSize() {
-        return size;
+    public String getSleeveLenght() {
+        return sleeveLenght;
     }
-    public void setSize(String size) {
-        this.size = size;
+
+    public void setSleeveLenght(String sleeveLenght) {
+        this.sleeveLenght = sleeveLenght;
     }
+
+    public String getCollarType() {
+        return collarType;
+    }
+
+    public int getBustSize() {
+        return bustSize;
+    }
+
+    public void setBustSize(int bustSize) {
+        this.bustSize = bustSize;
+    }
+
+    public void setCollarType(String collarType) {
+        this.collarType = collarType;
+    }
+
+    public boolean hasButton() {
+        return hasButton;
+    }
+
+    public void setButton(boolean hasButton) {
+        this.hasButton = hasButton;
+    }
+
+
 
 }

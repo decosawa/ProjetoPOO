@@ -35,5 +35,9 @@ public class Parser {
         }
     }
 
+    public String parseIntToString(int value) {
+        return String.valueOf(value);
+    }
+
 
 }
