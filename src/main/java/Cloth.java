@@ -68,7 +68,7 @@ public abstract class Cloth {
         this.season = season;
     }
 
-        public void setColor(String color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

@@ -16,7 +16,7 @@ public class Sell {
     }
 
     // Getters and Setters
-    public Cloth getClothes() {
+    public Cloth getCloth() {
         return cloth;
     }
 
@@ -24,7 +24,7 @@ public class Sell {
         return quantity;
     }
     
-    public void setClothes(Cloth clothes) {
+    public void setClothes(Cloth cloth) {
         this.cloth = cloth;
     }
 

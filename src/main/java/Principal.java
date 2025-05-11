@@ -7,8 +7,6 @@ public class Principal {
         UpperGarment upperGarment = new UpperGarment();
         OnePiece onePiece = new OnePiece();
 
-        
-
         String value = "";
 
         System.out.println("Entre tamanho de camiseta: ");
