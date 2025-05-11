@@ -69,5 +69,6 @@ public class OnePiece extends Cloth {
 
     public void setHasPocket(boolean hasPocket) {
         this.hasPocket = hasPocket;
+    }
     
 }
