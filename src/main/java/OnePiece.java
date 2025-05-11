@@ -7,7 +7,7 @@ public class OnePiece extends Cloth {
     private String sleeveLenght;
     private String collarType;
     private boolean hasButton;
-    private boolean hasPockets;
+    private boolean hasPocket;
 
     // Constructors
     public OnePiece() {
@@ -39,8 +39,8 @@ public class OnePiece extends Cloth {
         return hasButton;
     }
 
-    public boolean hasPockets() {
-        return hasPockets;
+    public boolean hasPocket() {
+        return hasPocket;
     }
 
     public void setWaistSize(int waistSize) {
@@ -66,5 +66,8 @@ public class OnePiece extends Cloth {
     public void setButton(boolean hasButton) {
         this.hasButton = hasButton;
     }
+
+    public void setHasPocket(boolean hasPocket) {
+        this.hasPocket = hasPocket;
     
 }

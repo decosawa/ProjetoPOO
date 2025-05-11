@@ -3,7 +3,7 @@ public class LowerGarment extends Cloth {
     //Attributes
     private int waistSize;
     private int hipSize;
-    private boolean hasPockets;
+    private boolean hasPocket;
     
     //Constructors
     public LowerGarment() {
@@ -19,12 +19,12 @@ public class LowerGarment extends Cloth {
         return hipSize;
     }
 
-    private boolean getHasPockets() {
-        return hasPockets;
+    private boolean getHasPocket() {
+        return hasPocket;
     }
 
-    public void setHasPockets(boolean hasPockets) {
-        this.hasPockets = hasPockets;
+    public void setHasPockets(boolean hasPocket) {
+        this.hasPocket = hasPocket;
     }
 
     public void setHipSize(int hipSize) {
@@ -34,7 +34,5 @@ public class LowerGarment extends Cloth {
     public void setWaistSize(int waistSize) {
         this.waistSize = waistSize;
     }
-
-    
     
 }

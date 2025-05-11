@@ -44,6 +44,4 @@ public class UpperGarment extends Cloth {
         this.hasButton = hasButton;
     }
 
-
-
 }
