@@ -10,7 +10,6 @@ public abstract class Cloth {
     private double price;
     private int length;
 
-    
     // Constructors
     public Cloth() {
         this.color = "";

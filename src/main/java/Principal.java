@@ -5,29 +5,32 @@ public class Principal {
         Parser parser = Parser.generateParser();
         LowerGarment lowerGarment = new LowerGarment();
         UpperGarment upperGarment = new UpperGarment();
+        OnePiece onePiece = new OnePiece();
+
+        
 
         String value = "";
 
         System.out.println("Entre tamanho de camiseta: ");
         value = reader.dataEntry(value);
-        boolean isValid = verifyUpperGarmentSize(value);
+        boolean isValid = verifySizeLetterBased(value);
         while (!isValid) {
             System.out.println("Tamanho inválido. Tente novamente.");
             value = reader.dataEntry(value);
-            isValid = verifyUpperGarmentSize(value);
+            isValid = verifySizeLetterBased(value);
         }
         upperGarment.setSize(value);
 
         System.out.println("Entre tamanho de calça: ");
         value = reader.dataEntry(value);
         int parsedIntegerValue = parser.tryParseInt(value);
-        isValid = verifyLowerGarmentSize(parsedIntegerValue);
+        isValid = verifySizeNumberBased(parsedIntegerValue);
         
         while (!isValid) {
             System.out.println("Tamanho inválido. Tente novamente.");
             value = reader.dataEntry(value);
             parsedIntegerValue = parser.tryParseInt(value);
-            isValid = verifyLowerGarmentSize(parsedIntegerValue);
+            isValid = verifySizeNumberBased(parsedIntegerValue);
         }
         lowerGarment.setSize(parser.parseIntToString(parsedIntegerValue));
 
@@ -35,12 +38,7 @@ public class Principal {
         System.out.println("Tamanho da calça: " + lowerGarment.getSize());
     }
 
-    public static boolean verifyUpperGarmentSize(String value) {
-        boolean isValid = false;
-        return !isValid ? value.equalsIgnoreCase("PP") || value.equalsIgnoreCase("P") || value.equalsIgnoreCase("M") || value.equalsIgnoreCase("G") || value.equalsIgnoreCase("GG"): isValid;
-    }
-
-    public static boolean verifyLowerGarmentSize(int value) {
+    public static boolean verifySizeNumberBased(int value) {
         boolean isValid = false;
         if(value >= 30 && value <= 54) {
             if(value % 2 == 0) {
@@ -48,7 +46,11 @@ public class Principal {
             }
         }
         return isValid;
-        
+    }
+
+    public static boolean verifySizeLetterBased(String value){
+        boolean isValid = false;
+        return !isValid ? value.equalsIgnoreCase("PP") || value.equalsIgnoreCase("P") || value.equalsIgnoreCase("M") || value.equalsIgnoreCase("G") || value.equalsIgnoreCase("GG"): isValid;
     }
         
 }

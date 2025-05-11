@@ -1,6 +1,6 @@
 public class Sell {
     
-    private Cloth clothes;
+    private Cloth cloth;
     private int quantity;
     private double totalPrice;
     private String paymentMethod;
@@ -8,6 +8,7 @@ public class Sell {
 
     // Constructors
     public Sell() {
+        this.cloth = null;
         this.quantity = 0;
         this.totalPrice = 0.0;
         this.paymentMethod = "";
@@ -16,40 +17,40 @@ public class Sell {
 
     // Getters and Setters
     public Cloth getClothes() {
-        return clothes;
-    }
-    
-    public void setClothes(Cloth clothes) {
-        this.clothes = clothes;
+        return cloth;
     }
 
     public int getQuantity() {
         return quantity;
     }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    
+    public void setClothes(Cloth clothes) {
+        this.cloth = cloth;
     }
 
     public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
-
-    public String getCustomerName() {
+     public String getCustomerName() {
         return customerName;
     }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    } 
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
