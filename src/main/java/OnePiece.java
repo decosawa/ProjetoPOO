@@ -1,6 +1,6 @@
-public class OnePiece extends Cloth {
+public class OnePiece extends Garment {
 
-    // Attributes
+    // Atributos específicos de OnePiece (combinação de Upper e Lower Garment)
     private int waistSize;
     private int hipSize;
     private int bustSize;
@@ -9,12 +9,19 @@ public class OnePiece extends Cloth {
     private boolean hasButton;
     private boolean hasPocket;
 
-    // Constructors
+    // Construtor
     public OnePiece() {
-        super();
+        super(); // Chama o construtor da classe pai (Cloth)
+        this.bustSize = 0;
+        this.hipSize = 0;
+        this.waistSize = 0;
+        this.sleeveLenght = "";
+        this.collarType = "";
+        this.hasButton = false;
+        this.hasPocket = false;
     }
 
-    // Getters and Setters
+    // Getters
     public int getWaistSize() {
         return waistSize;
     }
@@ -43,15 +50,25 @@ public class OnePiece extends Cloth {
         return hasPocket;
     }
 
-    public void setWaistSize(int waistSize) {
+    // Setters
+    public void setWaistSize(int waistSize) throws InvalidValueException {
+        if (waistSize <= 0) {
+            throw new InvalidValueException("O tamanho da cintura deve ser um valor positivo.");
+        }
         this.waistSize = waistSize;
     }
 
-    public void setHipSize(int hipSize) {
+    public void setHipSize(int hipSize) throws InvalidValueException {
+        if (hipSize <= 0) {
+            throw new InvalidValueException("O tamanho do quadril deve ser um valor positivo.");
+        }
         this.hipSize = hipSize;
     }
 
-    public void setBustSize(int bustSize) {
+    public void setBustSize(int bustSize) throws InvalidValueException {
+        if (bustSize <= 0) {
+            throw new InvalidValueException("O tamanho do busto deve ser um valor positivo.");
+        }
         this.bustSize = bustSize;
     }
 
@@ -71,4 +88,18 @@ public class OnePiece extends Cloth {
         this.hasPocket = hasPocket;
     }
     
+    // Sobrescrita
+    public void displayDetails() {
+        super.displayDetails(); // Chama o método displayDetails da classe Cloth
+        System.out.println("Detalhes específicos da Peça Única:");
+        System.out.println("  Tamanho do Busto: " + this.bustSize);
+        System.out.println("  Tamanho da Cintura: " + this.waistSize);
+        System.out.println("  Tamanho do Quadril: " + this.hipSize);
+        System.out.println("  Comprimento da Manga: " + this.sleeveLenght);
+        System.out.println("  Tipo de Gola: " + this.collarType);
+        System.out.println("  Tem Botões: " + (this.hasButton ? "Sim" : "Não"));
+        System.out.println("  Tem Bolsos: " + (this.hasPocket ? "Sim" : "Não"));
+    }
 }
+    
+
