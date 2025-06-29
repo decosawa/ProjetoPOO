@@ -1,39 +1,30 @@
+//André Luiz Gonçalves da Silva Teixeira
+//RA: 2564289
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author andre
+ */
 public class Parser {
-    
     private static Parser parser;
-    public static int count=0;
-
-    private Parser(){}
-
+    private Parser() {}
+    
+    //Singleton
     public static Parser generateParser() {
-        if(parser == null) {
-            parser = new Parser();
-            count++;
-        }
+        if (parser == null) { parser = new Parser(); }
         return parser;
     }
-
-    public int tryParseInt(String value){
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            System.out.println("Entrada inválida.");
-            System.out.println("Por favor, insira um número inteiro.");
-            value = Reader.generateReader().dataEntry(value);
-            return tryParseInt(value);
-        }
+    
+    public int tryParseInt(String value) throws NumberFormatException {
+        return Integer.parseInt(value.trim());
     }
-
-    public double tryParseDouble(String value){
-        try {
-            return Double.parseDouble(value);
-        } catch (NumberFormatException e) {
-            System.out.println("Entrada inválida.");
-            System.out.println("Por favor, insira um número decimal.");
-            value = Reader.generateReader().dataEntry(value);
-            return tryParseDouble(value);
-        }
+    public double tryParseDouble(String value) throws NumberFormatException {
+        return Double.parseDouble(value.trim().replace(",", "."));
     }
-
-
+    
 }
